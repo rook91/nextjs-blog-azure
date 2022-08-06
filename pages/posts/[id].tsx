@@ -4,7 +4,9 @@ import { getAllPostIds, getPostData } from '../../lib/posts';
 import Date from '../../components/date';
 import utilStyles from '../../styles/utils.module.css';
 
-export async function getStaticProps({ params }) {
+
+
+export async function getStaticProps({ params }: any) {
     // Fetch necessary data for the blog post using params.id
     const postData = await getPostData(params.id);
     return {
@@ -14,7 +16,15 @@ export async function getStaticProps({ params }) {
     };
 }
 
-export default function Post({ postData }) {
+type PostProps = {
+  postData: {
+    title: string,
+    date: string,
+    contentHtml: string,
+  }
+};
+
+export default function Post({ postData }: PostProps) {
     return (
       <Layout>
         <Head>
