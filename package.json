@@ -2,8 +2,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start"
+  },
+  "engines": {
+    "npm": ">=8.0.0",
+    "node": ">=16.8.0"
   },
   "dependencies": {
     "date-fns": "^2.29.1",
