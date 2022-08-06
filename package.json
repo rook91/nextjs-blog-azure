@@ -5,6 +5,10 @@
     "build": "next build",
     "start": "next start"
   },
+  "engines": {
+    "npm": ">=8.0.0",
+    "node": ">=18.0.0"
+  },
   "dependencies": {
     "date-fns": "^2.29.1",
     "gray-matter": "^4.0.3",
