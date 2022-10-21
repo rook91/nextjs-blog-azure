@@ -14,7 +14,42 @@ export async function getStaticProps() {
   };
 }
 
+const fetchFUT23 = () => {
+  fetch("https://utas.mob.v1.fut.ea.com/ut/game/fifa23/club", {
+    method: 'POST', // *GET, POST, PUT, DELETE, etc.
+    mode: 'no-cors', // no-cors, *cors, same-origin
+    // cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+    // credentials: 'same-origin', // include, *same-origin, omit
+    headers: {
+      'Content-Type': 'application/json',
+      'X-UT-SID': '30b88bf6-7a11-4257-8e9e-820a856825ef',
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    // redirect: 'follow', // manual, *follow, error
+    // referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+    body: JSON.stringify({
+      "count": 91,
+      "sort": "desc",
+      "sortBy": "value",
+      "start": 0,
+      "type": "player"
+  }) // body data type must match "Content-Type" header
+  })
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    console.log("--------------------------------");
+    console.log(data);
+  })
+  .catch(function(error) {
+    console.log(error);
+  });
+}
+
 export default function Home({ allPostsData } : { allPostsData:any }) {
+  // fetchFUT23();
+  console.log("INDEX.TSX");
   return (
     <Layout home>
       <Head>

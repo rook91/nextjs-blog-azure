@@ -25,6 +25,7 @@ type PostProps = {
 };
 
 export default function Post({ postData }: PostProps) {
+  console.log("POSTS.TSX");
     return (
       <Layout>
         <Head>
