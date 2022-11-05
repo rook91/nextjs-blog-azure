@@ -62,6 +62,9 @@ export default function Home({ allPostsData } : { allPostsData:any }) {
         <Link href="/contact">
           <a>Link to contact</a>
         </Link>
+        <Link href="/portalPacjenta">
+          <a>Link to Portal Pacjenta</a>
+        </Link>
       </h2>
 
       </section>
